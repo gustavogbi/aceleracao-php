@@ -1,1 +1,2 @@
 Qualquer texto
+<?php phpinfo(); ?>
