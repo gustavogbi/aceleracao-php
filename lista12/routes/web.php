@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\{UsuarioController};
+use App\Http\Controllers\{UsuarioController, DocumentoController};
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/perfil', [UsuarioController::class, 'perfil']);
+
+Route::get('/documentos', [DocumentoController::class, 'documentos']);
