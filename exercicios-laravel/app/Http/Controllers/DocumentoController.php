@@ -16,4 +16,13 @@ class DocumentoController extends Controller
 
         return view('documento', compact('documentos'));
     }
+
+    function exibe($id) {
+        $documento = Documento::find($id);
+
+        Log::channel('documentos')->info("O documento {$id} foi consultado.");
+
+        return view('exibedoc', compact('documento'));
+
+    }
 }

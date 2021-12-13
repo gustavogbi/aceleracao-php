@@ -20,4 +20,5 @@ Route::get('/', function () {
 });
 Route::get('/perfil', [UsuarioController::class, 'perfil']);
 
-Route::get('/documentos', [DocumentoController::class, 'documentos']);
+Route::get('/documentos', [DocumentoController::class, 'documentos'])->name('documentos');
+Route::get('/documento/{id}', [DocumentoController::class, 'exibe'])->name('exibedoc');
