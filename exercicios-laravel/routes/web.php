@@ -22,7 +22,7 @@ use App\Http\Controllers\{
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/perfil', [UsuarioController::class, 'perfil']);
+Route::get('/perfil', [UsuarioController::class, 'perfil'])->name('perfil');
 
 Route::get('/documentos', [DocumentoController::class, 'documentos'])->name('documentos');
 Route::get('/documento/{id}', [DocumentoController::class, 'exibe'])->name('exibedoc');
