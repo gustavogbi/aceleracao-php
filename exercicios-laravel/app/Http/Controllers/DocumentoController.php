@@ -25,4 +25,17 @@ class DocumentoController extends Controller
         return view('exibedoc', compact('documento'));
 
     }
+
+    public function novo() {
+        return view('criadoc');
+    }
+
+    public function insere(Request $request) {
+        $documento = Documento::create($request->all());
+
+        if (!$documento) dd($documento);
+
+        return redirect()->route('documentos')
+            ->with('mensagem', "Documento: {$documento->id} foi criado com sucesso!");
+    }
 }

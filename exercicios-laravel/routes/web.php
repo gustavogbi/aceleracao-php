@@ -26,6 +26,8 @@ Route::get('/perfil', [UsuarioController::class, 'perfil'])->name('perfil');
 
 Route::get('/documentos', [DocumentoController::class, 'documentos'])->name('documentos');
 Route::get('/documento/{id}', [DocumentoController::class, 'exibe'])->name('exibedoc');
+Route::get('/documentos/novo', [DocumentoController::class, 'novo'])->name('criadoc');
+Route::post('/documentos', [DocumentoController::class, 'insere'])->name('inseredoc');
 
 Route::get('/assinaturas', [AssinaturaController::class, 'index'])->name('assinatura.index');
 Route::get('/assinatura/{id}', [AssinaturaController::class, 'show'])->name('assinatura.show');
