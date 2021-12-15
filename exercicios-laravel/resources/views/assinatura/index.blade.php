@@ -1,3 +1,6 @@
+@if (session('mensagem'))
+     <p style="color:green;">{{ session('mensagem') }}</p>
+@endif
 @foreach ($assinaturas as $assinatura)
 <p>Quantidade de assinaturas: {{ $assinatura->qnt_assinaturas }} </p>
 <p>Assinatura Padrão: {{ $assinatura->assinatura_padrao }} </p>

@@ -31,4 +31,6 @@ Route::post('/documentos', [DocumentoController::class, 'insere'])->name('insere
 Route::delete('/documentos/remover/{id}', [DocumentoController::class, 'remove'])->name('removedoc');
 
 Route::get('/assinaturas', [AssinaturaController::class, 'index'])->name('assinatura.index');
+Route::get('/assinatura/novo', [AssinaturaController::class, 'novo'])->name('assinatura.novo');
 Route::get('/assinatura/{id}', [AssinaturaController::class, 'show'])->name('assinatura.show');
+Route::post('/assinaturas', [AssinaturaController::class, 'store'])->name('assinaturas.store');
