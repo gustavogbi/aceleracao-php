@@ -1,3 +1,5 @@
+<a href="{{route('assinatura.novo')}}"><button>Criar nova assinatura</button></a>
+<hr>
 @if (session('mensagem'))
      <p style="color:green;">{{ session('mensagem') }}</p>
 @endif

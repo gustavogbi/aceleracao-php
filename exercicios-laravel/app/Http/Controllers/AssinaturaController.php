@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateStoreAssinaturas;
 use Illuminate\Http\Request;
 
 use App\Models\Assinatura;
@@ -26,7 +27,7 @@ class AssinaturaController extends Controller
         return view('assinatura.create');
     }
 
-    public function store(Request $request) {
+    public function store(UpdateStoreAssinaturas $request) {
         $assinatura = Assinatura::create($request->all());
 
         if (!$assinatura) dd($assinatura);
