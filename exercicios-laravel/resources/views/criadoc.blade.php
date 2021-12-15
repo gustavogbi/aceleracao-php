@@ -3,7 +3,7 @@
 @if($errors->any())
     <div>
         @foreach ($errors->all() as $error)
-            {{$error}}
+            <p style="color: red"> {{$error}} </p>
         @endforeach
     </div>
 @endif

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateStoreDocumentos;
 use Illuminate\Http\Request;
 use App\Models\Documento;
 use Illuminate\Support\Facades\Log;
@@ -30,7 +31,7 @@ class DocumentoController extends Controller
         return view('criadoc');
     }
 
-    public function insere(Request $request) {
+    public function insere(UpdateStoreDocumentos $request) {
         $documento = Documento::create($request->all());
 
         if (!$documento) dd($documento);
