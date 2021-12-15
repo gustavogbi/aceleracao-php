@@ -39,4 +39,16 @@ class DocumentoController extends Controller
         return redirect()->route('documentos')
             ->with('mensagem', "Documento: {$documento->id} foi criado com sucesso!");
     }
+
+    public function remove($id) {
+        $documento = Documento::find($id);
+
+        if (!$documento) dd($documento);
+
+        $documento->delete();
+
+        return redirect()->route('documentos')
+            ->with('mensagem', "Documento: {$documento->id} foi removido com sucesso!");
+
+    }
 }
