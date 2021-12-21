@@ -24,7 +24,6 @@ class DocumentoController extends Controller
         Log::channel('documentos')->info("O documento {$id} foi consultado.");
 
         return view('exibedoc', compact('documento'));
-
     }
 
     public function novo() {
@@ -49,6 +48,21 @@ class DocumentoController extends Controller
 
         return redirect()->route('documentos')
             ->with('mensagem', "Documento: {$documento->id} foi removido com sucesso!");
+    }
 
+    public function login(){
+
+        $usuario = ["name" => "Gustavo"];
+        session(["usuario" => $usuario]);
+
+        return redirect()->route('documentos')
+            ->with('mensagem', "Login realizado com sucesso!");
+    }
+
+    public function logout(){
+        session()->forget('usuario');
+
+        return redirect()->route('documentos')
+            ->with('mensagem', "Logout realizado!");
     }
 }
