@@ -21,5 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::namespace('App\Http\Controllers\Api')->group(function(){
     Route::prefix('documentos')->group(function(){
         Route::get('', 'DocumentoController@index');
+        Route::get('/{id}', 'DocumentoController@show');
     });
 });
