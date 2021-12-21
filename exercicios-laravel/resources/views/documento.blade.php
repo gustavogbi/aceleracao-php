@@ -3,6 +3,13 @@
 @endif
 <a href="{{route('criadoc')}}"><button>Criar novo documento</button></a>
 <hr>
+<a href="{{ route('documentos') . "?page=" .  (intval($documentos->currentPage())-1) }}">
+     <button><< ANTERIOR</button>
+</a>
+<a href="{{ route('documentos') . "?page=" .  (intval($documentos->currentPage())+1) }}">
+     <button>PRÓXIMA >></button>
+</a>
+<hr>
 @foreach ($documentos as $documento)
 <p>Titulo: {{ $documento->titulo }} </p>
 <p>Tamanho: {{ $documento->tamanho }} </p>
