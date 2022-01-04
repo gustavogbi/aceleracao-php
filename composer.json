@@ -1,6 +1,6 @@
 {
     "require":{
         "kevinlebrun/slug.php": "*",
-        "tymon/jwt-auth": "^1.0"
+        "lcobucci/jwt": "*"
     }
 }
