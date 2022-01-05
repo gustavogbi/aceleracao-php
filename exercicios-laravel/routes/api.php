@@ -19,6 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::namespace('App\Http\Controllers\Api')->group(function(){
+    Route::group(["middleware" =>  "jwt.auth"], function() {
+        Route::get('/logout', 'LoginApiController@logout')->name('logout');
+    });
+
     Route::prefix('documentos')->group(function(){
         Route::get('', 'DocumentoController@index');
         Route::get('/{id}', 'DocumentoController@show');
