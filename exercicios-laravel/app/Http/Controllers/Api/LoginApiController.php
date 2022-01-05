@@ -28,4 +28,12 @@ class LoginApiController extends Controller
             'message' => 'logout'
         ], 200);
     }
+
+    public function refresh() {
+        $token = auth('api')->refresh();
+
+        return response()->json([
+            "token" => $token
+        ], 201);
+    }
 }
