@@ -23,4 +23,6 @@ Route::namespace('App\Http\Controllers\Api')->group(function(){
         Route::get('', 'DocumentoController@index');
         Route::get('/{id}', 'DocumentoController@show');
     });
+
+    Route::post('/login', 'LoginApiController@login')->name('login');
 });

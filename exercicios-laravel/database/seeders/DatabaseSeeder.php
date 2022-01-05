@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         /* $this->call([
             DocumentosSeeder::class
         ]); */
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(10)->create();
 
         \App\Models\Documento::factory(600)->create();
     }
