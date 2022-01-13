@@ -31,6 +31,6 @@ class CreateAnalisesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('analises');
+        Schema::connection('pgsql')->dropIfExists('analises');
     }
 }
